@@ -3,6 +3,10 @@ pipeline {
         dockerfile {
             label 'docker-dind'
         }
+    stages {
+        stage('Hello Docker') {
+            sh 'docker ps'
+        }
     }
     post {
         always {
