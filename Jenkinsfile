@@ -2,7 +2,6 @@ pipeline {
     agent {
         dockerfile {
             label 'dind'
-             configurações adicionais aqui, se necessário
         }
     }
     stages {
