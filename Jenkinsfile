@@ -2,10 +2,12 @@ pipeline {
     agent {
         dockerfile {
             label 'docker-dind'
-        }
+    }
     stages {
         stage('Hello Docker') {
-            sh 'docker ps'
+            steps {
+                sh 'docker ps'
+            }
         }
     }
     post {
@@ -25,4 +27,5 @@ pipeline {
             echo 'Falha na execução da Pipeline.'
         }
     }    
+}
 }
