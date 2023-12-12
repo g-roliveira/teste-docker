@@ -1,4 +1,7 @@
 pipeline {
+    agent {
+        label 'dind'
+    }
     stages {
         stage('Hello Docker') {
             steps {
