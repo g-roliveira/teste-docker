@@ -1,13 +1,13 @@
 pipeline {
     agent {
-        label 'dind'
+        dockerfile {
+            label 'dind'
+        }
     }
     stages {
         stage('Hello Docker') {
             steps {
-                container('docker') {
-                    sh 'docker ps'
-                }
+                sh 'docker ps'
             }
         }
     }
