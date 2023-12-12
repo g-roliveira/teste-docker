@@ -1,14 +1,19 @@
 pipeline {
     agent {
-        dockerfile {
-            label 'dind'
-            // configurações adicionais aqui, se necessário
-        }
+        label 'dind'
     }
+    //agent {
+        //dockerfile {
+       //     label 'dind'
+            // configurações adicionais aqui, se necessário
+     //   }
+   // }
     stages {
         stage('Hello Docker') {
             steps {
-                sh 'docker ps'
+                container('docker') {
+                    sh 'docker ps'
+                }
             }
         }
     }
